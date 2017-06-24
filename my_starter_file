@@ -1,0 +1,91 @@
+print('A hero\'s tale')
+
+hero_name=input('What is your hero\'s name?  ')
+
+hero_class=input('What class is {}?  '.format(hero_name))
+
+m_f = input('Is {} a male or a female? '.format(hero_name))
+
+m_f = str.lower(m_f)
+
+while m_f != 'male' and m_f != 'female':
+        
+        if m_f == 'male':
+                print ('A male, Good.')
+        elif m_f =='female':
+                print ('A female, Excelent.')
+        else:
+                print ('S T F U...  YOU MUST PICK MALE OR FEMALE!!!')
+                
+        m_f = input('Is {} a male or a female?'.format(hero_name))
+
+gen = ''
+if m_f == 'male':
+        gen += 'his'
+elif m_f == 'female':
+        gen += 'her'
+him_her = ''
+if m_f == 'male':
+        him_her += 'him'
+elif m_f == 'female':
+        him_her += 'her'
+
+
+print('So then {} is a {} {}. And a powerful one at that.'.format(hero_name,m_f,hero_class))
+
+input('Shall we continue...')
+
+print('So then the story goes, that one day, {} was looking for\
+ {} new piece of armor in {} weekly loot chest. But someone had stolen it!!'.format(hero_name,gen,gen))
+print('Who could have the audacity to steal from a {}? {} quickly glanced around the room, searching for clues.'.format(hero_class,hero_name))
+
+thing1=input('What was the first thing to catch your eye .....?  ')
+thing2=input('The second....?  ')
+thing3=input('And the third...?  ')
+
+print('The first thing {} noticed was a {}, but that obviously belonged to {}. '.format(hero_name,thing1,him_her))
+input()
+print("After that {} saw a {} and that seemed strange because it's usually hidden under {} bed.  ".format(hero_name,thing2,gen))
+input()
+print("So if {} had been moved out from under the bed, maybe another clue could be found there.  ".format(thing2))
+print("Upon looking under the bed {} found a {},( how ever that got under there), and instantly knew that it was important.  ".format(hero_name,thing3))
+input()
+print("The {} was over sized and smelled funny.  Sort of tainted.  This certainly could have been the work of a demon. ".format(thing3))
+print("If we are to catch this demon, and get our loot back, we'll need to grab some gear. ")
+#numbering amount of gear, while limiting the amount
+gear=input('How many pieces of gear would you like to bring?  ')
+int_gear = int(gear)
+
+while int_gear >5:
+    print("{} thinks to{}self(Hmmm, that seems a bit too heavy. Maybe I'll try 5 or less). ".format(hero_name, gen))
+    gear=input('How many pieces of gear would you like to bring?  ')
+    int_gear = int(gear)
+#allocating gear
+
+rng_gear = range(int_gear)
+def bag_holdings(gear):
+    rng_gear = range(int_gear)    
+    count = int_gear    
+    bag = []   
+    while count > 0:
+        for x in gear:
+                if x == 0:
+                        bag = bag + [input('Gear 1?')]
+                        count = count - 1
+                if x == 1:
+                        bag = bag + [input('Gear 2?')]
+                        count - 1
+                if x == 2:
+                        bag = bag + [input('Gear 3?')]
+                        count - 1
+                if x == 3:
+                        bag = bag + [input('Gear 4?')]
+                        count - 1
+                if x == 4:
+                        bag = bag + [input('Gear 5?')]
+                        count - 1
+        return bag
+
+print('So the gear {} decided to bring was {}. '.format(hero_name,(bag_holdings(rng_gear))))
+
+
